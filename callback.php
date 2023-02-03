@@ -31,12 +31,12 @@ function getToken($params) {
     return $response;
 }
 
-if (empty($_GET['state']) || (isset($_SESSION['oauth2state']) && $_GET['state'] !== $_SESSION['oauth2state'])) {
-    if (isset($_SESSION['oauth2state'])) {
-        unset($_SESSION['oauth2state']);
+if (empty($_GET["state"]) || (isset($_SESSION["oauth2state"]) && $_GET["state"] !== $_SESSION["oauth2state"])) {
+    if (isset($_SESSION["oauth2state"])) {
+        unset($_SESSION["oauth2state"]);
     }
 
-    exit('Invalid state');
+    exit("Invalid state");
 }
 
 if (!isset($_GET["code"]) || $_GET["code"] == "") {
